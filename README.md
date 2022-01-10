@@ -28,6 +28,7 @@ node.js
 mongoDB
 
 주요 코드
+
 '''
 import jwt from 'jsonwebtoken';
 import { config } from '../config.js';
@@ -56,6 +57,10 @@ export const isAuth = async (req, res, next) => {
   
 };
 '''
+
+
+
+
 
 ...
 import * as tweetRepository from "../data/tweet.js";
