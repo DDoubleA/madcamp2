@@ -14,9 +14,9 @@
     + [MyTweets](#MyTweets)
 
 + [구현 결과](#구현-결과)
-    + [AllTweets]
-    + [Login](#2-연락처)
-    + [MyTweets](#3-스톱워치)
+    + [AllTweets](#AllTweets)
+    + [Login](#Login)
+    + [MyTweets](#MyTweets)
 
 ## 프로젝트 개요
 
