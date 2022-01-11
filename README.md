@@ -11,15 +11,12 @@
     + [결과물](#결과물)
 
 
-+ [탭별 주요코드 설명](#탭별-주요코드-설명)
++ [탭별 주요코드 & 결과화면 ](#탭별-주요코드-결과)
     + [AllTweets](#AllTweets)
     + [Login](#Login)
     + [MyTweets](#MyTweets)
 
-+ [구현 결과](#구현-결과)
-    + [AllTweets](#AllTweets)
-    + [Login](#Login)
-    + [MyTweets](#MyTweets)
+
   
 
 ---------------------------
