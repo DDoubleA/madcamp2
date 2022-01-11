@@ -36,7 +36,7 @@
   + Node.js
   + MongoDB
   
-### 탭별 주요코드 설명
+### 탭별 주요코드 설명 및 구현결과
 
   + AllTweets
 
@@ -196,7 +196,5 @@ const Tweets = memo(({ tweetService, username, addable }) => {
     }, 3000);
   };
 ```
----------------------------
 
-### 구현결과
 
