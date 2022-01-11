@@ -1,4 +1,7 @@
 # 몰입캠프 2주차 과제
+<img width="100%" src="https://user-images.githubusercontent.com/86216960/148906316-7dbe8813-65cd-4091-aa60-50f3103c2f56.gif" />
+<p align="center"><em>지금, 해로운 새가 날갯짓을 시작했다.</em></p>
+<p align="center"><em>At the moment, injurious bird started flapping.</em></p>
 
 ## 목차
 
