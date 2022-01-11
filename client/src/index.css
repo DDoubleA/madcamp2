@@ -225,6 +225,14 @@ button {
   font-weight: bold;
 }
 
+.tweet-hi
+{
+  font-size: 0.5rem;
+  margin-left: 4px;
+  color: var(--color-black);
+  font-weight: bold;
+}
+
 .tweet-username {
   cursor: pointer;
   transition: 200ms;
@@ -247,6 +255,11 @@ button {
 
 .tweet-input {
   width: 100%;
+  margin-right: 4px;
+}
+
+.tag-input{
+  width: 20%;
   margin-right: 4px;
 }
 

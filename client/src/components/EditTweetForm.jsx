@@ -24,6 +24,7 @@ const EditTweetForm = ({ tweet, onUpdate, onClose }) => {
         onChange={onChange}
         className='form-input tweet-input'
       />
+      
       <div className='edit-tweet-form-action'>
         <button type='submit' className='form-btn-update'>
           Update

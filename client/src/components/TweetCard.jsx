@@ -5,9 +5,11 @@ import EditTweetForm from './EditTweetForm';
 
 const TweetCard = memo(
   ({ tweet, owner, onDelete, onUpdate, onUsernameClick }) => {
-    const { id, username, name, url, text, createdAt } = tweet;
+    const { id, username, name, url, text, createdAt, tag } = tweet;
     const [editing, setEditing] = useState(false);
     const onClose = () => setEditing(false);
+
+
 
     return (
       <li className='tweet'>
@@ -30,6 +32,9 @@ const TweetCard = memo(
                 onClose={onClose}
               />
             )}
+            <span
+              className="tweet-hi"
+            > { tag ? '#' : ""} {tag} </span>
           </div>
         </section>
         {owner && (

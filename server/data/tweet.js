@@ -9,6 +9,7 @@ const tweetSchema = new Mongoose.Schema(
     name: { type: String, required: true },
     username: { type: String, required: true },
     url: String,
+    tag: {type: String},
   },
   { timestamps: true }
 );
@@ -28,13 +29,14 @@ export async function getById(id) {
   return Tweet.findById(id);
 }
 
-export async function create(text, userId) {
+export async function create(text, userId,tag) {
   return UserRepository.findById(userId).then((user) =>
     new Tweet({
       text,
       userId,
       name: user.name,
       username: user.username,
+      tag
     }).save()
   );
 }
