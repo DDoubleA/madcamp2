@@ -45,6 +45,7 @@
 |:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/86216960/148919887-fc51cc82-4650-43da-8d3e-881d2418b3f2.png" width="200" />|<img src="https://user-images.githubusercontent.com/86216960/148919880-5e5553be-ecc3-4dd0-b678-be338d866b8d.png" width="200" />|
 
+웹소켓을 통해 실시간으로 트윗을 업로드 하도록 구현했습니다. 그리고 도배를 방지하기 위해 최소 3글자 이상 작성하도록 제한을 두었고 다른 사람 트윗의 아이디를 클릭하면 그 사람이 남긴 모든 트윗글들을 볼 수 있습니다. 그리고 트윗은 수정, 삭제가 가능하며 이 기능 또한 실시간으로 업로드 됩니다.
 
 ```
  import * as tweetRepository from '../data/tweet.js';
@@ -108,6 +109,7 @@ export async function deleteTweet(req, res, next) {
 |:-:|:-:|
 |<img src="https://user-images.githubusercontent.com/86216960/148919883-2d14e3aa-4322-49da-ad90-fcc02f7d82c4.png" width="200" />|<img src="https://user-images.githubusercontent.com/86216960/148919885-7bfc2eac-16ff-4d77-b7d8-2f72c3a378df.png" width="200" />|
 
+로그인 페이지에서 먼저 회원가입을 가능하게 구현했습니다. 회원가입은 사용자 이름, 아이디, 비밀번호, 이메일, 프로필 이미지 URL을 받아오고 아이디와 이메일이 기존에 존재하는지 유효성 검사를 통해 존재하지 않으면 DB에 저장합니다. 그리고 비밀번호는 bcrypt hashing 알고리즘을 통해 인코딩 시켰고, 클라이언트가 요청하여 토큰을 받아올 경우 미들웨어에서 토큰의 권한과 기간이 유효한지 확인하고 받아올 수 있도록 했습니다. 프로필 이미지 URL이 유효하지 않은 경로일 경우에는 사람이름의 첫글자를 프로필 이미지로 띄우도록 설정하였습니다.
 
 ```
 import Mongoose from 'mongoose';
@@ -138,6 +140,7 @@ export async function createUser(user) {
 ```
 
   + MyTweets
+MyTweets 탭에서 사용자가 작성한 트윗글들을 모두 볼 수 있습니다. 여기서도 추가와 삭제가 가능하며 변경된 내용들은 유효성 검사를 거치고 ALL Tweets에서 실시간으로 업로드 됩니다.
 
 |My Tweets|
 |:-:|
