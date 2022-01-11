@@ -26,6 +26,10 @@ class Socket {
     this.io.on('connection', (socket) => {
       console.log('Socket client connected');
     });
+
+    this.io.on('disconnection', () => {
+      console.log(`Socket disconnected : ${socket.id}`)
+    })
   }
 }
 

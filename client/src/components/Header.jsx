@@ -6,7 +6,6 @@ const Header = memo(({ username, onLogout, onMyTweets, onAllTweets }) => {
       <div className='logo'>
         <img src='./img/molip.png' alt='Dwitter Logo' className='logo-img' />
         <h1 className='logo-name'>몰입캠프</h1>
-        {username && <span className='logo-user'>@{username}</span>}
       </div>
       {username && (
         <nav className='menu'>
