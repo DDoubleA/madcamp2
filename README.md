@@ -43,6 +43,12 @@
 
   + AllTweets
 
+
+|All Tweets|Edit Tweet|
+|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/86216960/148919887-fc51cc82-4650-43da-8d3e-881d2418b3f2.png" width="200" />|<img src="https://user-images.githubusercontent.com/86216960/148919880-5e5553be-ecc3-4dd0-b678-be338d866b8d.png" width="200" />|
+
+
 ```
  import * as tweetRepository from '../data/tweet.js';
 import { getSocketIO } from '../connection/socket.js';
@@ -100,6 +106,12 @@ export async function deleteTweet(req, res, next) {
 }
 ```
   + Login
+
+|Login|Make Account|
+|:-:|:-:|
+|<img src="https://user-images.githubusercontent.com/86216960/148919883-2d14e3aa-4322-49da-ad90-fcc02f7d82c4.png" width="200" />|<img src="https://user-images.githubusercontent.com/86216960/148919885-7bfc2eac-16ff-4d77-b7d8-2f72c3a378df.png" width="200" />|
+
+
 ```
 import Mongoose from 'mongoose';
 import { useVirtualId } from '../database/database.js';
@@ -129,6 +141,13 @@ export async function createUser(user) {
 ```
 
   + MyTweets
+
+|My Tweets|
+|:-:|
+|<img src="https://user-images.githubusercontent.com/86216960/148919875-09203515-8f30-4e9a-9e9e-03c9620e86ea.png" width="200" />|
+
+
+
 ```
 const Tweets = memo(({ tweetService, username, addable }) => {
   const [tweets, setTweets] = useState([]);
