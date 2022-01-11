@@ -141,7 +141,7 @@ export async function createUser(user) {
 ```
 
   + MyTweets
-MyTweets 탭에서 사용자가 작성한 트윗글들을 모두 볼 수 있습니다. 여기서도 추가와 삭제가 가능하며 변경된 내용들은 유효성 검사를 거치고 ALL Tweets에서 실시간으로 업로드 됩니다. 
+MyTweets 탭에서 사용자가 작성한 트윗글들을 모두 볼 수 있습니다. 여기서도 내용의 수정과 삭제가 가능하며 변경된 내용들은 유효성 검사를 거치고 ALL Tweets에서 실시간으로 업로드 됩니다. 
 
 |My Tweets|
 |:-:|
