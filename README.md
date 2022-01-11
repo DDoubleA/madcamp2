@@ -96,6 +96,84 @@ export async function deleteTweet(req, res, next) {
   res.sendStatus(204);
 }
 ```
+  + Login
+```
+import Mongoose from 'mongoose';
+import { useVirtualId } from '../database/database.js';
+
+const userSchema = new Mongoose.Schema({
+  username: { type: String, required: true },
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  url: String,
+});
+
+useVirtualId(userSchema);
+const User = Mongoose.model('User', userSchema);
+
+export async function findByUsername(username) {
+  return User.findOne({ username });
+}
+
+export async function findById(id) {
+  return User.findById(id);
+}
+
+export async function createUser(user) {
+  return new User(user).save().then((data) => data.id);
+}
+```
+
+  + MyTweets
+```
+const Tweets = memo(({ tweetService, username, addable }) => {
+  const [tweets, setTweets] = useState([]);
+  const [error, setError] = useState('');
+  const history = useHistory();
+  const { user } = useAuth();
+
+  useEffect(() => {
+    tweetService
+      .getTweets(username)
+      .then((tweets) => setTweets([...tweets]))
+      .catch(onError);
+
+    const stopSync = tweetService.onSync((tweet) => onCreated(tweet));
+    return () => stopSync();
+  }, [tweetService, username, user]);
+
+  const onCreated = (tweet) => {
+    setTweets((tweets) => [tweet, ...tweets]);
+  };
+
+  const onDelete = (tweetId) =>
+    tweetService
+      .deleteTweet(tweetId)
+      .then(() =>
+        setTweets((tweets) => tweets.filter((tweet) => tweet.id !== tweetId))
+      )
+      .catch((error) => setError(error.toString()));
+
+  const onUpdate = (tweetId, text) =>
+    tweetService
+      .updateTweet(tweetId, text)
+      .then((updated) =>
+        setTweets((tweets) =>
+          tweets.map((item) => (item.id === updated.id ? updated : item))
+        )
+      )
+      .catch((error) => error.toString());
+
+  const onUsernameClick = (tweet) => history.push(`/${tweet.username}`);
+
+  const onError = (error) => {
+    setError(error.toString());
+    setTimeout(() => {
+      setError('');
+    }, 3000);
+  };
+```
 ---------------------------
 
 ### 구현결과
